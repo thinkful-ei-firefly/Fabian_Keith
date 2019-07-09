@@ -65,3 +65,16 @@ const deerCrossing = hazardWarningCreator('Deer crossing the road');
 rocksWarning("USA");
 hail('Canada');
 rocksWarning("USA");
+
+//-------------------------
+
+function turtleMovement(movements){
+    movements.filter(movement => {
+        if (movement[0] >= 0 && movement[1] >= 0) return movement;
+    }).map(movement => {
+        return movement[0] + movement[1];
+    }).forEach((item, index) => {console.log(`Movement #${index}: ${item} steps`)});
+}
+
+turtleMovement([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
