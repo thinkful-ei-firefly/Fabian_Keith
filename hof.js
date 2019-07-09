@@ -78,3 +78,14 @@ function turtleMovement(movements){
 
 turtleMovement([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
 
+function decode(sentence){
+    let splitSentence = sentence.split(' ');
+    let decoded = splitSentence.reduce((acc, word) => {
+        if (word.length === 3)
+            return acc + ' ';
+        return acc + word.slice(-1);
+    }, '');
+    console.log(decoded);
+}
+
+decode('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest');
