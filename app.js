@@ -31,3 +31,12 @@ function max(numbers){
 let test = [1,5,3,15,20, -5];
 console.log(min(test));
 console.log(max(test));
+
+function average(numbers){
+    let sum = 0;
+    numbers.forEach(number => {
+        sum += number;
+    });
+    return sum/numbers.length;
+}
+console.log(average(test));
