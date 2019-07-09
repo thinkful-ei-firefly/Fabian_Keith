@@ -16,8 +16,8 @@ let goodbye = function goodbye(){
     console.log("Goodbye World");
 }
 
-repeat(hello, 5);
-repeat(goodbye, 5);
+//repeat(hello, 5);
+//repeat(goodbye, 5);
 
 //------------------------------
 
@@ -45,5 +45,23 @@ const filteredNames = filter(myNames, function(name) {
     return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+//console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+
+function hazardWarningCreator(typeOfWarning){
+    let warningCounter = 0;
+
+    return function(location){
+        warningCounter++;
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const hail = hazardWarningCreator('Hail');
+const deerCrossing = hazardWarningCreator('Deer crossing the road');
+rocksWarning("USA");
+hail('Canada');
+rocksWarning("USA");
